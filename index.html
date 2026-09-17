@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CourseCraft | Course Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">🎓 CourseCraft</div>
+        <div class="admin">👤 Course Admin</div>
+    </header>
+
+    <nav class="navbar">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#courses">Courses</a>
+        <a href="#students">Students</a>
+        <a href="#enrollments">Enrollments</a>
+    </nav>
+
+    <main class="container">
+
+        <section id="dashboard" class="dashboard">
+            <h1>Welcome to CourseCraft 🚀</h1>
+            <p>Manage courses, students and enrollments in one place.</p>
+
+            <div class="cards">
+
+                <div class="card purple">
+                    <h3>📚 Total Courses</h3>
+                    <h2 id="totalCourses">0</h2>
+                </div>
+
+                <div class="card blue">
+                    <h3>👨‍🎓 Total Students</h3>
+                    <h2 id="totalStudents">0</h2>
+                </div>
+
+                <div class="card green">
+                    <h3>📝 Enrollments</h3>
+                    <h2 id="totalEnrollments">0</h2>
+                </div>
+
+                <div class="card orange">
+                    <h3>⭐ Active Courses</h3>
+                    <h2 id="activeCourses">0</h2>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="courses" class="section">
+
+            <h2>📚 Course Management</h2>
+
+            <form id="courseForm">
+
+                <input type="hidden" id="courseId">
+
+                <input
+                    type="text"
+                    id="courseName"
+                    placeholder="Course Name"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="instructor"
+                    placeholder="Instructor Name"
+                    required
+                >
+
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Programming">Programming</option>
+                    <option value="Database">Database</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Cloud Computing">Cloud Computing</option>
+                </select>
+
+                <input
+                    type="number"
+                    id="duration"
+                    placeholder="Duration in Weeks"
+                    min="1"
+                    required
+                >
+
+                <select id="courseStatus" required>
+                    <option value="">Select Status</option>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+
+                <button type="submit">➕ Add Course</button>
+
+            </form>
+
+            <input
+                type="text"
+                id="courseSearch"
+                placeholder="🔍 Search course..."
+            >
+
+            <h3>Course Records</h3>
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Course Name</th>
+                            <th>Instructor</th>
+                            <th>Category</th>
+                            <th>Duration</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="courseList"></tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+        <section id="students" class="section">
+
+            <h2>👨‍🎓 Student Management</h2>
+
+            <form id="studentForm">
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Student Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="studentEmail"
+                    placeholder="Student Email"
+                    required
+                >
+
+                <select id="studentDepartment" required>
+                    <option value="">Select Department</option>
+                    <option value="CSE">CSE</option>
+                    <option value="AIML">AI and Machine Learning</option>
+                    <option value="ECE">ECE</option>
+                    <option value="EEE">EEE</option>
+                    <option value="IT">Information Technology</option>
+                </select>
+
+                <button type="submit">➕ Add Student</button>
+
+            </form>
+
+            <h3>Student Records</h3>
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Department</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentList"></tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+        <section id="enrollments" class="section">
+
+            <h2>📝 Course Enrollments</h2>
+
+            <form id="enrollmentForm">
+
+                <select id="enrollmentStudent" required>
+                    <option value="">Select Student</option>
+                </select>
+
+                <select id="enrollmentCourse" required>
+                    <option value="">Select Course</option>
+                </select>
+
+                <button type="submit">🎯 Enroll Student</button>
+
+            </form>
+
+            <h3>Enrollment Records</h3>
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Student</th>
+                            <th>Course</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="enrollmentList"></tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 CourseCraft | Course Management System</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
