@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #fdf4ff, #e0f2fe, #ecfdf5);
+    color: #1f2937;
+}
+
+.header {
+    background: linear-gradient(100deg, #7c3aed, #2563eb, #0891b2);
+    color: white;
+    padding: 22px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.admin {
+    font-size: 16px;
+}
+
+.navbar {
+    background: white;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.navbar a {
+    color: #4c1d95;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 18px;
+}
+
+.navbar a:hover {
+    color: #0891b2;
+}
+
+.container {
+    width: 92%;
+    max-width: 1250px;
+    margin: 30px auto;
+}
+
+.dashboard h1 {
+    color: #4c1d95;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.dashboard p {
+    margin-bottom: 25px;
+    color: #475569;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.card {
+    color: white;
+    padding: 28px 20px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card h3 {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    color: white;
+    font-size: 38px;
+}
+
+.purple {
+    background: linear-gradient(135deg, #9333ea, #c026d3);
+}
+
+.blue {
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+}
+
+.green {
+    background: linear-gradient(135deg, #059669, #22c55e);
+}
+
+.orange {
+    background: linear-gradient(135deg, #ea580c, #facc15);
+}
+
+.section {
+    background: rgba(255, 255, 255, 0.95);
+    margin-top: 32px;
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+}
+
+.section h2 {
+    color: #312e81;
+    margin-bottom: 22px;
+}
+
+.section h3 {
+    color: #475569;
+    margin: 20px 0 15px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #c4b5fd;
+    border-radius: 9px;
+    outline: none;
+    background: white;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 7px rgba(99, 102, 241, 0.35);
+}
+
+button {
+    background: linear-gradient(90deg, #7c3aed, #2563eb);
+    color: white;
+    border: none;
+    padding: 13px 18px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #4c1d95, #1d4ed8);
+}
+
+#courseSearch {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+th {
+    background: #4c1d95;
+    color: white;
+    padding: 14px;
+    text-align: center;
+}
+
+td {
+    padding: 13px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tr:nth-child(even) {
+    background: #f5f3ff;
+}
+
+tr:hover {
+    background: #e0f2fe;
+}
+
+.action-btn {
+    padding: 7px 11px;
+    margin: 3px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background: #f59e0b;
+    color: white;
+}
+
+.delete-btn {
+    background: #dc2626;
+    color: white;
+}
+
+footer {
+    background: #312e81;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 45px;
+}
+
+@media (max-width: 950px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 12px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 20px;
+    }
+}
